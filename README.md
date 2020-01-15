@@ -1,6 +1,6 @@
 # otherTools
 
-Using Java with different tools
+Use Java with some tools
 
 - SonarQube
 - Grafana
