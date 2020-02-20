@@ -58,7 +58,7 @@ Use Java with following tools
             sonar.sources=src/main/java
             
             #Path for libraries
-            #sonar.libraries=target/lib/*.jar
+            sonar.java.libraries=./target/classes
             
             #Path for binaries
             sonar.java.binaries=target
@@ -87,7 +87,7 @@ Use Java with following tools
             
             #----- JaCoCo reports
             sonar.java.coveragePlugin=jacoco
-            sonar.jacoco.reportPath=target/jacoco.exec        
+            sonar.coverage.jacoco.xmlReportPaths=target/      
           ```
           
         - Run `mvn clean test` in your project by cmd
