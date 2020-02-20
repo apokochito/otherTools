@@ -2,7 +2,7 @@
 
 Use Java with following tools
 
-- Getting Started
+- **Getting Started**
     - SonarQube
         
         - SonarQube empowers all developers to write cleaner and safer code.
@@ -35,33 +35,33 @@ Use Java with following tools
     
         - HP SiteScope is agentless monitoring software focused on monitoring the availability and performance of distributed IT infrastructures, including Servers, Network devices and services, Applications and application components, operating systems and various IT enterprise components.
 
-- Configuration
+- **Configuration**
 
     - SonarQube in local
     
-        - You need to have JaCoCo plugin in your project, you can install it from this repository https://github.com/apokochito/mavenBasics if you don't have it
+        - You need to have JaCoCo plugin in your project, you can get it from this repository https://github.com/apokochito/mavenBasics if you don't have it (POM file)
         - Download and extract SonarQube Developer Edition from https://binaries.sonarsource.com/CommercialDistribution/sonarqube-developer/sonarqube-developer-7.8.zip (Verify your SonarQube version if you're not using Java 8)
         - Change a property in sonarqube > conf > wrapper.conf
             - `wrapper.java.comman=\path\to\my\jdk\bin\java`
         - Download SonarScanner from https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
-        - Add C:\...\SonarScanner\bin into your PATH environment variable
-        - Add a sonar-project.properties file inside your project like this one
+        - Add C:\...\SonarScanner\bin into your PATH environment variable for your windows account
+        - Add a sonar-project.properties file inside your project like this one (check your own properties)
             
             ```
-            sonar.projectKey=com.example.demo
-            sonar.projectName=ProjectName
-            sonar.projectVersion=1.0.0
+            sonar.projectKey=com.other.tools
+            sonar.projectName=other-tools
+            sonar.projectVersion=0.0.1-SNAPSHOT
             
             #sonar.host.url=someurl
             
             #Path for sonar sources, . or src/main/java
-            sonar.sources=.
+            sonar.sources=src/main/java
             
             #Path for libraries
             #sonar.libraries=target/lib/*.jar
             
             #Path for binaries
-            sonar.binaries=target
+            sonar.java.binaries=target
             
             #----- Default database
             #sonar.jdbc.url=someurl
@@ -77,23 +77,24 @@ Use Java with following tools
             sonar.language=java
             
             #----- Exclusions
-            #sonar.exclusions=**/*AnyFolder*/**/*,**/*AnyFolder*/**/*
+            sonar.exclusions=**/*test*/**
             
             sonar.sourceEncoding=UTF-8
             
-            sonar.tests=src/test
+            sonar.tests=src/test/
             sonar.dynamicAnalysis=reuseReports
             sonar.junit.reportsPath=target/surfire-reports
             
             #----- JaCoCo reports
             sonar.java.coveragePlugin=jacoco
-            sonar.jacoco.reportPath=target/jacoco.exec            
+            sonar.jacoco.reportPath=target/jacoco.exec        
           ```
           
         - Run `mvn clean test` in your project by cmd
         - Run the Sonarqube server (StartSonar.bat) inside SonarQube > bin > windowsx86-x64 with the following command `.\StartSonar.bat`
-        - (If the server is not working well) "Kill the Java process and try deleting the temp folder contents again."
-        - Go to https://localhost:4040
+            - (If the server is not working well) "Kill the Java process and try deleting the temp folder contents again."
+        - Go to https://localhost:9000 an verify SonarQube UI (Check if you're not using this port already)
+        - Now, run a cmd window inside your project root (otherTools folder in this case), and run this command `C:\...\sonar-scanner-4.2.0.1873-windows\bin\sonar-scanner.bat`
     
     - Grafana
     
