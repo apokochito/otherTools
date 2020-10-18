@@ -95,10 +95,13 @@ Use Java with following tools
             - (If the server is not working well) "Kill the Java process and try deleting the temp folder contents again."
         - Go to https://localhost:9000 an verify SonarQube UI (Check if you're not using this port already)
         - Now, run a cmd window inside your project root (otherTools folder in this case), and run this command `C:\...\sonar-scanner-4.2.0.1873-windows\bin\sonar-scanner.bat`
+        - You will be able to scan different branches depending of your Sonar version and edition
     
     - Grafana
     
-        - Steps
+    - Grafana in local (https://grafana.com/docs/grafana/latest/getting-started/getting-started/)
+    
+        - Install Grafana in local, depending your operating system.
     
     - ElasticSearch
       - Kibana
